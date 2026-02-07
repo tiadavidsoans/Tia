@@ -1,13 +1,14 @@
-process fastqc {
+process FASTQC {
+    publishDir "${params.output}/fastqc", mode: 'copy'
 
     input:
-    path fastq
+    path fastq_file
 
     output:
-    path "*.html"
+    path "*_fastqc*"
 
     script:
     """
-    fastqc $fastq
+    ${params.fastqc_bin} ${fastq_file}
     """
 }
