@@ -39,7 +39,7 @@ nf-pipeline/
 
 1. Clone this repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/tiadavidsoans/NF-PIPLINE
    cd nf-pipeline
    ```
 
