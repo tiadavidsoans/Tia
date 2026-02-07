@@ -1,7 +1,5 @@
-nextflow.enable.dsl=2
-
-include { fastqc } from './modules/fastqc.nf'
+include { TRIM_AND_QC } from './workflows/workflow.nf'
 
 workflow {
-    fastqc(params.fastq)
+    TRIM_AND_QC()
 }
