@@ -1,26 +1,45 @@
-# Nextflow Pipeline
+# NF-Pipeline
 
-This repository contains a basic Nextflow DSL2 pipeline.
+A Nextflow-based bioinformatics pipeline for quality control, trimming, alignment, and variant calling of FASTQ sequencing files.
+
+---
 
 ## Description
-The pipeline performs quality control on FASTQ files using FastQC.
 
-## Directory structure
-Tia/
-├── main.nf
-├── nextflow.config
-├── modules/
-│   └── fastqc.nf
-└── data/
-    └── sample.fastq
+This pipeline is designed for processing next-generation sequencing (NGS) data. It automates the complete analysis workflow from raw sequencing reads to variant discovery.
 
+The pipeline performs the following steps:
+- FASTQC: Quality control analysis of raw reads
+- CUTADAPT: Adapter and low-quality base trimming
+- BWA-MEM: Alignment of reads to a reference genome
+- BCFtools: Variant calling (SNP/Indel detection)
 
-## Requirements
+---
+
+## Prerequisites
+
 - Nextflow
-- Java
-- FastQC
+- Conda for environment management
+- Tools:
+  - FastQC
+  - CUTADAPT
+  - BWA
+  - Samtools
+  - BCFtools
 
-## How to run
+---
+
+## Installation
+
 ```bash
-nextflow run main.nf
+# Clone the repository
+git clone https://github.com/tiadavidsoans/nf-pipeline
+cd nf-pipeline
+
+# Create Conda environment
+conda env create -f environment.yml
+
+# Activate the environment
+conda activate bioinfo
+
 
