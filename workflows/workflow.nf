@@ -17,3 +17,4 @@ workflow TRIM_AND_QC {
 workflow {
     TRIM_AND_QC()
 }
+ 
